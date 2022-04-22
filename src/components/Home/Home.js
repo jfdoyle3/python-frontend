@@ -1,22 +1,33 @@
-import React, {useState} from 'react';
-import Button from '../common/Button';
-import CounterBoxes from '../Counter/CounterBoxes';
+import React, { useState,useEffect } from 'react';
+import axios from 'axios';
+
 
 const Home = () => {
 
-  // const [count, setCount] = useState(0);
+  const [boo, setBoo] = useState('');
 
-  // const handleClick = () => {
-  //   setCount(count + 1);
-  // } 
-
-  // const handleReduce = () => {
-  //   setCount(count - 1);
-  // }
+  useEffect(()=>{
+    const getAllData = async () => {
+      try {
+        const res = await axios.get('http://127.0.0.1:5000/')
+        console.log(res.data)
+        setBoo(res.data);
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getAllData();
+  },[])
 
   return (
-   <div>
-     <h1>HOME!!!!!</h1>
+<div style={{
+      display: "flex",
+      flex: "1",
+      flexDirection: "column",
+      alignItems: 'center',
+      minHeight: '100vh',
+    }}>
+      <h1>{boo.boo}</h1>
     </div>
   )
 }
