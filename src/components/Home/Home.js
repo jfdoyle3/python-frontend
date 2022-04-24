@@ -4,14 +4,14 @@ import axios from 'axios';
 
 const Home = () => {
 
-  const [boo, setBoo] = useState('');
+  const [crypto, setCrypto] = useState('');
 
   useEffect(()=>{
     const getAllData = async () => {
       try {
-        const res = await axios.get('http://127.0.0.1:5000/')
+        const res = await axios.get('http://127.0.0.1:80/')
         console.log(res.data)
-        setBoo(res.data);
+        setCrypto(res.data);
       } catch (err) {
         console.log(err)
       }
@@ -27,7 +27,8 @@ const Home = () => {
       alignItems: 'center',
       minHeight: '100vh',
     }}>
-      <h1>{boo.boo}</h1>
+      <h1>{crypto.currency}</h1>
+      <p>{crypto.high}</p>
     </div>
   )
 }
