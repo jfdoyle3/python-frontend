@@ -27,8 +27,9 @@ const Home = () => {
       alignItems: 'center',
       minHeight: '100vh',
     }}>
-      <h1>{crypto.currency}</h1>
-      <p>{crypto.high}</p>
+      
+      <label>Search</label>
+      <input type="text" onChange={e => setCrypto(e.target.value)} />
     </div>
   )
 }
