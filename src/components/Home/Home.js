@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(()=>{
     const getAllData = async () => {
       try {
-        const res = await axios.get('http://127.0.0.1:80/cryptoSymbol/ETH')
+        const res = await axios.get(`http://127.0.0.1:80/cryptoSymbol/${setCrypto}`)
         console.log(res.data)
         setCrypto(res.data);
       } catch (err) {
