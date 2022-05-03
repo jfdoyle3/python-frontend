@@ -5,7 +5,7 @@ https://github.com/jfdoyle3/python-server
 
 
 
-This is the Ract Info:
+This is the React Info:
 Clean this up!!
 # Getting Started with Create React App
 
